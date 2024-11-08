@@ -35,6 +35,9 @@
             android:name=".MainActivity"
             android:exported="true" />
 
+        <!-- AddClassActivity -->
+        <activity android:name=".AddClassActivity" />
+
     </application>
 
 </manifest>

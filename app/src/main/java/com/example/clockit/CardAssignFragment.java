@@ -67,7 +67,8 @@ public class CardAssignFragment extends Fragment {
             } else if (itemId == R.id.nav_card_assign) {
                 loadFragment(new CardAssignFragment());
             } else if (itemId == R.id.nav_add_classes) {
-                loadFragment(new AddClassesFragment());
+                Intent intent = new Intent(getActivity(), AddClassActivity.class);
+                startActivity(intent);
             } else if (itemId == R.id.nav_help) {
                 loadFragment(new HelpFragment());
             }

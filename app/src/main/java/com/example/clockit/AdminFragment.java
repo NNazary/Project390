@@ -1,11 +1,15 @@
 package com.example.clockit;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +30,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.annotations.Nullable;
 
 import java.util.Calendar;
 
@@ -39,6 +44,22 @@ public class AdminFragment extends Fragment {
     public AdminFragment() {
         // Required empty public constructor
     }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true); // Enable options menu in the fragment
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        // Inflate the menu for the toolbar in the fragment
+        inflater.inflate(R.menu.admin_fragment_menu, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -86,12 +107,20 @@ public class AdminFragment extends Fragment {
             } else if (itemId == R.id.nav_card_assign) {
                 loadFragment(new CardAssignFragment());
             } else if (itemId == R.id.nav_add_classes) {
-                loadFragment(new AddClassesFragment());
+                Intent intent = new Intent(getActivity(), AddClassActivity.class);
+                startActivity(intent);
             } else if (itemId == R.id.nav_help) {
                 loadFragment(new HelpFragment());
             }
             drawerLayout.closeDrawer(GravityCompat.START);
             return true;
+        });
+
+        // Add this code to set up the center "Add Class" button
+        Button addClassButton = view.findViewById(R.id.addClassButton); // Ensure this ID matches the one in fragment_admin.xml
+        addClassButton.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), AddClassActivity.class);
+            startActivity(intent);
         });
 
         return view;
