@@ -75,19 +75,21 @@
 
             <TableRow>
                 <TextView
+                    android:id="@+id/totalStudentsText"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="Total Students: 500"
+                    android:text="Total Students: "
                     android:textSize="16sp"
                     android:textColor="#2D2D36"
                     android:gravity="center"
                     android:fontFamily="@font/labrador_b_medium" />
                 <TextView
+                    android:id="@+id/absenteesText"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="Absentees: 11%"
+                    android:text="Absentees: "
                     android:textSize="16sp"
                     android:textColor="#2D2D36"
                     android:gravity="center"
@@ -95,19 +97,21 @@
             </TableRow>
             <TableRow>
                 <TextView
+                    android:id="@+id/attendanceRateText"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="Attendance Rate: 89%"
+                    android:text="Attendance Rate: "
                     android:textSize="16sp"
                     android:textColor="#2D2D36"
                     android:gravity="center"
                     android:fontFamily="@font/labrador_b_medium" />
                 <TextView
+                    android:id="@+id/classesTodayText"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="Classes Today: 5"
+                    android:text="Classes Today: "
                     android:textSize="16sp"
                     android:textColor="#2D2D36"
                     android:gravity="center"
@@ -182,46 +186,6 @@
                     android:textSize="16sp"
                     android:textColor="#2D2D36"
                     android:textStyle="bold"
-                    android:gravity="center"
-                    android:fontFamily="@font/labrador_b_medium" />
-            </TableRow>
-
-            <!-- Data Row -->
-            <TableRow>
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="9:00 AM"
-                    android:textSize="16sp"
-                    android:textColor="#2D2D36"
-                    android:gravity="center"
-                    android:fontFamily="@font/labrador_b_medium" />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="CS101"
-                    android:textSize="16sp"
-                    android:textColor="#2D2D36"
-                    android:gravity="center"
-                    android:fontFamily="@font/labrador_b_medium" />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Rm 201"
-                    android:textSize="16sp"
-                    android:textColor="#2D2D36"
-                    android:gravity="center"
-                    android:fontFamily="@font/labrador_b_medium" />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="90%"
-                    android:textSize="16sp"
-                    android:textColor="#2D2D36"
                     android:gravity="center"
                     android:fontFamily="@font/labrador_b_medium" />
             </TableRow>

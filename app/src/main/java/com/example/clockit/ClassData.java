@@ -6,21 +6,28 @@ public class ClassData {
     private String classCode;
     private String classDescription;
     private String teacherName;
+    private String startTime;
+    private String endTime;
+    private String roomNumber;
+    private String adminId; // New field to identify which admin created this class
 
-    // Default constructor required for Firebase
     public ClassData() {
+        // Default constructor required for calls to DataSnapshot.getValue(ClassData.class)
     }
 
-    // Parameterized constructor
-    public ClassData(String classId, String className, String classCode, String classDescription, String teacherName) {
+    public ClassData(String classId, String className, String classCode, String classDescription, String teacherName, String startTime, String endTime, String roomNumber, String adminId) {
         this.classId = classId;
         this.className = className;
         this.classCode = classCode;
         this.classDescription = classDescription;
         this.teacherName = teacherName;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.roomNumber = roomNumber;
+        this.adminId = adminId;
     }
 
-    // Getters and setters
+    // Getters and Setters for each field
     public String getClassId() {
         return classId;
     }
@@ -60,4 +67,37 @@ public class ClassData {
     public void setTeacherName(String teacherName) {
         this.teacherName = teacherName;
     }
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    public String getRoomNumber() {
+        return roomNumber;
+    }
+
+    public void setRoomNumber(String roomNumber) {
+        this.roomNumber = roomNumber;
+    }
+
+    public String getAdminId() {
+        return adminId;
+    }
+
+    public void setAdminId(String adminId) {
+        this.adminId = adminId;
+    }
 }
+
