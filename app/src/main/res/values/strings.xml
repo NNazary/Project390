@@ -45,4 +45,8 @@
         <item>Other</item>
     </string-array>
 
+    <string-array name="recipients_options">
+        <item>All Participants</item>
+        <item>COEN 390</item>
+    </string-array>
 </resources>

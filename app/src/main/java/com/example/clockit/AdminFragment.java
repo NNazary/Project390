@@ -82,7 +82,7 @@ public class AdminFragment extends Fragment {
             } else if (itemId == R.id.nav_participants) {
                 loadFragment(new ParticipantsFragment());
             } else if (itemId == R.id.nav_announcements) {
-                loadFragment(new AnnouncmentsFragment());
+                loadFragment(new AnnouncementsFragment());
             } else if (itemId == R.id.nav_card_assign) {
                 loadFragment(new CardAssignFragment());
             } else if (itemId == R.id.nav_add_classes) {
