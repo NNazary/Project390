@@ -153,7 +153,7 @@ public class Attendance_log extends AppCompatActivity{
 
 
                         String datesheet = jsonObject.optString("Date", "N/A");
-                        if(datesheet.equals(currentDate)) {
+                       if(datesheet.equals(currentDate)) {
                             TableRow newRow = new TableRow(Attendance_log.this);
                             newRow.setPadding(4, 0, 0, 0);
                             // Create new TextViews for each field (Name, ID, Check-in Time)
@@ -184,7 +184,7 @@ public class Attendance_log extends AppCompatActivity{
                             newRow.addView(timeView);
                             newRow.addView(timeoutView);
                             attendanceTable.addView(newRow);
-                        }
+                       }
                         progressDialog.dismiss();
                     }catch(JSONException e){
                         e.printStackTrace();

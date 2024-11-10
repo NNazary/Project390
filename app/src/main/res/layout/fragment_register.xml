@@ -2,10 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sign_up_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".SignUpActivity">
+    tools:context=".RegisterFragment">
 
     <!-- App Title -->
     <TextView
@@ -27,15 +28,15 @@
         android:id="@+id/tv_subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="80dp"
         android:fontFamily="@font/labrador_b_medium"
         android:text="Let's create an account"
         android:textColor="#2D2D36"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="24dp" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
     <!-- Email Field -->
     <EditText
@@ -132,19 +133,19 @@
         android:id="@+id/accountTypeRadioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/et_confirm_password"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp">
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_confirm_password">
 
         <RadioButton
             android:id="@+id/radioUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="User"
-            android:checked="true"/>
+            android:checked="true"
+            android:text="User" />
 
         <RadioButton
             android:id="@+id/radioAdmin"
@@ -174,37 +175,37 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:baselineAligned="true"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintVertical_bias="1.0"
-        android:baselineAligned="true">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <!-- Have an account text -->
         <TextView
             android:id="@+id/haveAccountText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/labrador_b_medium"
             android:text="Have an account?"
             android:textColor="#BDBDBD"
-            android:textSize="14sp"
-            android:fontFamily="@font/labrador_b_medium"
-            android:layout_gravity="center_vertical"/>
+            android:textSize="14sp" />
 
         <!-- Log In Button -->
         <Button
             android:id="@+id/logInButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:background="@android:color/transparent"
-            android:text="Log In"
-            android:textSize="14sp"
-            android:textColor="#2D2D36"
             android:fontFamily="@font/gomme_sans_w04_extrabold"
-            android:layout_marginStart="8dp"/>
+            android:text="Log In"
+            android:textColor="#2D2D36"
+            android:textSize="14sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
