@@ -58,6 +58,8 @@ import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -116,8 +118,28 @@ public class Attendance_log extends AppCompatActivity{
         idView.setText(id);
         idView.setPadding(8, 8, 8, 8);
 
+        Calendar calendar = Calendar.getInstance();
+
+        // Get hour, minute, and second from the current time
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int minute = calendar.get(Calendar.MINUTE);
+        int second = calendar.get(Calendar.SECOND);
+
+        // Format the time manually (HH:mm:ss)
+        String formattedTime = String.format("%02d:%02d:%02d", hour, minute, second);
+
+
+
+        // Get year, month, and day from the current date
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH) + 1; // Month is 0-based, so we add 1
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        // Format the date as "MM/DD/YYYY"
+        String formattedDate = String.format("%02d/%02d/%04d", month, day, year);
+
         TextView timeView = new TextView(this);
-        timeView.setText("Manual Entry");
+        timeView.setText("Manuel Entry");
         timeView.setPadding(8, 8, 8, 8);
 
         // Add TextViews to the new row
@@ -142,7 +164,7 @@ public class Attendance_log extends AppCompatActivity{
         progressDialog.show();
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, "https://script.google.com/macros/s/AKfycbyx9TymfwlKVXQA1jD28Bfcfl74PC3z8reY8s0ClaC6EPVLc-rf9s-hZTvTZY61LBh5WQ/exec", null, new Response.Listener<JSONArray>() {
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, "https://script.google.com/macros/s/AKfycbxc3igapJemaEYW5CS2JK5hUQw-zsOxuI_l44eMDYHeLPYQCf93oEff1bwdDHpSICos6w/exec", null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
 
@@ -210,7 +232,7 @@ public class Attendance_log extends AppCompatActivity{
 
         final ProgressDialog dialog = ProgressDialog.show(this,"Adding Item","Please wait....");
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycby_C0NokOkmB19nJ-26uNo8IJJ4leP9zfR3B7WctHqdNP3YBk-PCJeRf3Yd7vQwULVx/exec", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbxc3igapJemaEYW5CS2JK5hUQw-zsOxuI_l44eMDYHeLPYQCf93oEff1bwdDHpSICos6w/exec", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 dialog.dismiss();
@@ -235,6 +257,7 @@ public class Attendance_log extends AppCompatActivity{
                 parmas.put("action","addItem");
                 parmas.put("id",id);
                 parmas.put("userName",name);
+
 
                 return parmas;
             }
