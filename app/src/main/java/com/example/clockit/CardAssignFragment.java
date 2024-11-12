@@ -119,7 +119,7 @@ public class CardAssignFragment extends Fragment {
 
         final ProgressDialog dialog = ProgressDialog.show(getContext(),"Adding Item","Please wait....");
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycby3z0y8Q3YuzAXyoA2iGjRu1w2CgJV2L2YfROf-pgT_NXDTK9dDfmo_dqEEdZdsBvE93A/exec", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbyRnBLra2JSA85QPgbIdsiK4JtuO9gqgtR-vNUzbfVKKxVco2qjrIwx8EH7pGWbGValIQ/exec", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 dialog.dismiss();
@@ -141,7 +141,7 @@ public class CardAssignFragment extends Fragment {
 
                 Map<String , String> parmas = new HashMap<>();
 
-                parmas.put("action","addItem");
+                parmas.put("action","addItem2");
                 parmas.put("userName",name1);
 
                 return parmas;

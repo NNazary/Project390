@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -18,7 +18,9 @@
             android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
             android:value="com.google.firebase.components.ComponentDiscoveryService"
             tools:replace="android:value"/>
-
+        <activity android:name=".Attend_log_History"
+           android:parentActivityName=".AdminFragment"
+            />
         <activity android:name=".Attendance_log" />
         <activity android:name=".AdminFragment" />
         <activity

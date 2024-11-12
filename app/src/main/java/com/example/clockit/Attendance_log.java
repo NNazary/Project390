@@ -139,14 +139,14 @@ public class Attendance_log extends AppCompatActivity{
         String formattedDate = String.format("%02d/%02d/%04d", month, day, year);
 
         TextView timeView = new TextView(this);
-        timeView.setText("Manuel Entry");
+        timeView.setText(formattedTime);
         timeView.setPadding(8, 8, 8, 8);
 
         // Add TextViews to the new row
         newRow.addView(nameView);
         newRow.addView(idView);
         newRow.addView(timeView);
-        addItemtoSheet(name,id);
+        addItemtoSheet(name,id,formattedTime,formattedDate);
         // Add the new row to the attendance table
         attendanceTable.addView(newRow);
 
@@ -164,7 +164,7 @@ public class Attendance_log extends AppCompatActivity{
         progressDialog.show();
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, "https://script.google.com/macros/s/AKfycbxc3igapJemaEYW5CS2JK5hUQw-zsOxuI_l44eMDYHeLPYQCf93oEff1bwdDHpSICos6w/exec", null, new Response.Listener<JSONArray>() {
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, "https://script.google.com/macros/s/AKfycbyRnBLra2JSA85QPgbIdsiK4JtuO9gqgtR-vNUzbfVKKxVco2qjrIwx8EH7pGWbGValIQ/exec", null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
 
@@ -228,11 +228,11 @@ public class Attendance_log extends AppCompatActivity{
         requestQueue.add(jsonArrayRequest);
 
     }
-    private void addItemtoSheet(String name, String id){
+    private void addItemtoSheet(String name, String id, String checkin,String currdate){
 
         final ProgressDialog dialog = ProgressDialog.show(this,"Adding Item","Please wait....");
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbxc3igapJemaEYW5CS2JK5hUQw-zsOxuI_l44eMDYHeLPYQCf93oEff1bwdDHpSICos6w/exec", new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbyRnBLra2JSA85QPgbIdsiK4JtuO9gqgtR-vNUzbfVKKxVco2qjrIwx8EH7pGWbGValIQ/exec", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 dialog.dismiss();
@@ -257,6 +257,8 @@ public class Attendance_log extends AppCompatActivity{
                 parmas.put("action","addItem");
                 parmas.put("id",id);
                 parmas.put("userName",name);
+                parmas.put("checkin",checkin);
+                parmas.put("currDate",currdate);
 
 
                 return parmas;

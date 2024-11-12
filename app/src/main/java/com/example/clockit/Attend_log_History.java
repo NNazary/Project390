@@ -12,6 +12,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.android.volley.Request;
@@ -51,7 +52,7 @@ public class Attend_log_History extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
     }
@@ -62,7 +63,7 @@ public class Attend_log_History extends Fragment {
         progressDialog.show();
 
         RequestQueue requestQueue = Volley.newRequestQueue(getContext());
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, "https://script.google.com/macros/s/AKfycbxc3igapJemaEYW5CS2JK5hUQw-zsOxuI_l44eMDYHeLPYQCf93oEff1bwdDHpSICos6w/exec", null, new Response.Listener<JSONArray>() {
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, "https://script.google.com/macros/s/AKfycbyRnBLra2JSA85QPgbIdsiK4JtuO9gqgtR-vNUzbfVKKxVco2qjrIwx8EH7pGWbGValIQ/exec", null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
 
