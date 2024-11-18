@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Existing fields -->
+    <EditText
+        android:id="@+id/etClassName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Class Name" />
+
+    <EditText
+        android:id="@+id/etClassCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Class Code" />
+
+    <EditText
+        android:id="@+id/etClassDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Class Description" />
+
+    <EditText
+        android:id="@+id/etTeacherName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Teacher Name" />
+
+    <!-- New fields -->
+    <EditText
+        android:id="@+id/etClassStartTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Start Time (e.g., 9:00 AM)" />
+
+    <EditText
+        android:id="@+id/etClassEndTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="End Time (e.g., 11:00 AM)" />
+
+    <EditText
+        android:id="@+id/etClassRoom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Room Number" />
+
+    <Button
+        android:id="@+id/btnSubmitClass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Class" />
+</LinearLayout>
